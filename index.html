@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Youssif Kady – Junior Software Developer & Web Developer. Computer Science student at AAST University specializing in web, mobile, and machine learning." />
+  <meta name="keywords" content="Youssif Kady, software developer, web developer, portfolio, Django, Flutter, Python, machine learning, Egypt" />
+  <meta name="author" content="Youssif Kady" />
+  <meta property="og:title" content="Youssif Kady | Software & Web Developer" />
+  <meta property="og:description" content="Junior Software Developer & Web Developer – Portfolio" />
+  <meta property="og:type" content="website" />
+  <title>Youssif Kady | Software & Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo">YK</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CURSOR
+  ═══════════════════════════════════════════ -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       PARTICLE CANVAS
+  ═══════════════════════════════════════════ -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Youssif Kady Home">
+        <span class="logo-bracket">&lt;</span>YK<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Journey</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-sm btn-outline nav-cta">Hire Me</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#education" class="mobile-link">Journey</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+        <li><a href="#contact" class="btn btn-primary mobile-hire">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow glow-1" aria-hidden="true"></div>
+      <div class="hero-glow glow-2" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <!-- Text Side -->
+        <div class="hero-text" data-aos="fade-right">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            Available for Opportunities
+          </div>
+          <h1 id="hero-heading">
+            Hi, I'm <span class="gradient-text">Youssif Kady</span>
+          </h1>
+          <div class="hero-typewriter" aria-live="polite">
+            <span class="typewriter-prefix">I build </span>
+            <span id="typewriter-text" class="typewriter-target"></span>
+            <span class="typewriter-cursor" aria-hidden="true">|</span>
+          </div>
+          <p class="hero-description">
+            Junior Software Developer &amp; Web Developer crafting robust applications
+            that blend elegant design with powerful functionality. Based in <span class="highlight">Egypt 🇪🇬</span>.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="view-work-btn">
+              <span>View My Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline" id="contact-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="4">0</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="5">0</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="3">0</span>
+              <span class="stat-label">Years Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avatar Side -->
+        <div class="hero-avatar-wrap" data-aos="fade-left">
+          <div class="avatar-glow-ring" aria-hidden="true"></div>
+          <div class="avatar-frame">
+            <img src="avatar.png" alt="Youssif Kady – Professional Photo" class="hero-avatar" id="hero-avatar" />
+            <div class="avatar-overlay" aria-hidden="true"></div>
+          </div>
+          <!-- Floating Tech Chips -->
+          <div class="float-chip chip-1" aria-hidden="true">
+            <span>🐍</span> Python
+          </div>
+          <div class="float-chip chip-2" aria-hidden="true">
+            <span>🌐</span> Django
+          </div>
+          <div class="float-chip chip-3" aria-hidden="true">
+            <span>📱</span> Flutter
+          </div>
+          <div class="float-chip chip-4" aria-hidden="true">
+            <span>🤖</span> ML
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Get to Know Me</span>
+          <h2 id="about-heading">About <span class="gradient-text">Me</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Bio Card -->
+          <div class="about-bio glass-card" data-aos="fade-right">
+            <div class="about-photo-wrap">
+              <img src="avatar.png" alt="Youssif Kady" class="about-photo" />
+              <div class="about-photo-ring" aria-hidden="true"></div>
+            </div>
+            <div class="about-info">
+              <div class="info-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Egypt, Cairo</span>
+              </div>
+              <div class="info-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <span>01019608978</span>
+              </div>
+              <div class="info-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:youssifkady91@gmail.com">youssifkady91@gmail.com</a>
+              </div>
+              <div class="info-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>AAST University</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Text -->
+          <div class="about-text" data-aos="fade-left">
+            <p class="about-para lead">
+              I'm a <strong>Computer Science student at AAST University</strong>, passionate about software and web development.
+            </p>
+            <p class="about-para">
+              I specialize in building <span class="highlight">robust applications</span> across web and mobile platforms,
+              with a strong interest in <span class="highlight">Machine Learning</span>, problem-solving, and delivering
+              high-quality results to clients.
+            </p>
+            <p class="about-para">
+              Whether it's architecting a full-stack Django web application, developing cross-platform mobile apps with Flutter,
+              or training ML models for real-world predictions — I'm driven by the challenge of turning complex
+              problems into elegant solutions.
+            </p>
+            <div class="about-tags">
+              <span class="tag">🎯 Problem Solver</span>
+              <span class="tag">🔭 Lifelong Learner</span>
+              <span class="tag">💼 Freelancer</span>
+              <span class="tag">🤖 ML Enthusiast</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">
+              <span>Let's Connect</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="skills-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">What I Know</span>
+          <h2 id="skills-heading">My <span class="gradient-text">Skills</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Card 1: Web & Mobile -->
+          <div class="skill-card glass-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">🌐</div>
+              <h3>Web & Mobile Dev</h3>
+            </div>
+            <div class="badge-group">
+              <span class="badge badge-blue">HTML</span>
+              <span class="badge badge-blue">CSS</span>
+              <span class="badge badge-blue">JavaScript</span>
+              <span class="badge badge-purple">Django</span>
+              <span class="badge badge-teal">Flutter</span>
+              <span class="badge badge-green">Responsive Design</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Languages -->
+          <div class="skill-card glass-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">💻</div>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="badge-group">
+              <span class="badge badge-yellow">Python</span>
+              <span class="badge badge-orange">Java</span>
+              <span class="badge badge-red">C++</span>
+              <span class="badge badge-red">C</span>
+              <span class="badge badge-teal">Dart</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Databases -->
+          <div class="skill-card glass-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">🗄️</div>
+              <h3>Databases</h3>
+            </div>
+            <div class="badge-group">
+              <span class="badge badge-blue">SQL</span>
+              <span class="badge badge-blue">MySQL</span>
+              <span class="badge badge-blue">SQLite</span>
+            </div>
+            <div class="skill-bar-group">
+              <div class="skill-bar-item">
+                <span>SQL / MySQL</span>
+                <div class="skill-bar" data-width="85"><div class="skill-bar-fill"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>SQLite</span>
+                <div class="skill-bar" data-width="80"><div class="skill-bar-fill"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Advanced Tech -->
+          <div class="skill-card glass-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">🤖</div>
+              <h3>Advanced Technologies</h3>
+            </div>
+            <div class="badge-group">
+              <span class="badge badge-purple">Machine Learning</span>
+              <span class="badge badge-purple">Regression</span>
+              <span class="badge badge-purple">Random Forest</span>
+              <span class="badge badge-purple">XGBoost</span>
+              <span class="badge badge-red">Cybersecurity</span>
+              <span class="badge badge-red">Network Security</span>
+              <span class="badge badge-red">Kali Linux</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Tools & Soft Skills -->
+          <div class="skill-card glass-card skill-card-wide" data-aos="fade-up" data-aos-delay="320">
+            <div class="skill-card-header">
+              <div class="skill-icon" aria-hidden="true">🛠️</div>
+              <h3>Tools & Soft Skills</h3>
+            </div>
+            <div class="badge-group">
+              <span class="badge badge-green">Figma</span>
+              <span class="badge badge-orange">Git</span>
+              <span class="badge badge-blue">Problem-Solving</span>
+              <span class="badge badge-teal">Project Management</span>
+              <span class="badge badge-yellow">Strong Communication</span>
+              <span class="badge badge-green">Team Collaboration</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECTS SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">What I've Built</span>
+          <h2 id="projects-heading">Featured <span class="gradient-text">Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Sadeem -->
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="0" aria-labelledby="proj-sadeem">
+            <div class="project-glow" aria-hidden="true"></div>
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">🏥</div>
+              <div class="project-links">
+                <button class="icon-btn" title="Project Details" aria-label="View Sadeem project details">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 id="proj-sadeem" class="project-title">Sadeem</h3>
+              <p class="project-subtitle">AI Health Risk Prediction App</p>
+              <p class="project-desc">
+                An AI-driven health risk prediction application. Involved end-to-end requirement gathering,
+                UML system diagramming, and complete logic implementation using machine learning algorithms.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">Machine Learning</span>
+                <span class="tech-pill">UML Design</span>
+                <span class="tech-pill">XGBoost</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-type featured">⭐ Featured</span>
+            </div>
+          </article>
+
+          <!-- Project 2: E-Commerce -->
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="100" aria-labelledby="proj-ecommerce">
+            <div class="project-glow glow-purple" aria-hidden="true"></div>
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">🛒</div>
+              <div class="project-links">
+                <button class="icon-btn" title="Project Details" aria-label="View E-Commerce project details">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 id="proj-ecommerce" class="project-title">E-Commerce Website</h3>
+              <p class="project-subtitle">Full-Stack Web Application</p>
+              <p class="project-desc">
+                A full-featured e-commerce platform built with Django. Includes dynamic product listings,
+                secure user authentication, session-based cart functionality, and admin management.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">Django</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">HTML/CSS</span>
+                <span class="tech-pill">SQLite</span>
+                <span class="tech-pill">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-type web">🌐 Web App</span>
+            </div>
+          </article>
+
+          <!-- Project 3: Student Management -->
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="200" aria-labelledby="proj-student">
+            <div class="project-glow glow-teal" aria-hidden="true"></div>
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">🎓</div>
+              <div class="project-links">
+                <button class="icon-btn" title="Project Details" aria-label="View Student Management System project details">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 id="proj-student" class="project-title">Student Management System</h3>
+              <p class="project-subtitle">OOP Java Application</p>
+              <p class="project-desc">
+                A robust student records management system built with Java using OOP principles.
+                Features comprehensive file handling, data persistence, and thorough user input validation.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">Java</span>
+                <span class="tech-pill">OOP</span>
+                <span class="tech-pill">File Handling</span>
+                <span class="tech-pill">Data Structures</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-type desktop">🖥️ Desktop App</span>
+            </div>
+          </article>
+
+          <!-- Project 4: Linked List Visualizer -->
+          <article class="project-card glass-card" data-aos="fade-up" data-aos-delay="300" aria-labelledby="proj-ll">
+            <div class="project-glow glow-yellow" aria-hidden="true"></div>
+            <div class="project-top">
+              <div class="project-icon" aria-hidden="true">🔗</div>
+              <div class="project-links">
+                <button class="icon-btn" title="Project Details" aria-label="View Linked List Visualizer project details">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 id="proj-ll" class="project-title">Linked List Visualizer</h3>
+              <p class="project-subtitle">Interactive C++ Console App</p>
+              <p class="project-desc">
+                An interactive C++ console application that lets users insert, delete, and display
+                linked list nodes in real-time, demonstrating core data structures and algorithm concepts.
+              </p>
+              <div class="project-tech">
+                <span class="tech-pill">C++</span>
+                <span class="tech-pill">Data Structures</span>
+                <span class="tech-pill">Algorithms</span>
+                <span class="tech-pill">OOP</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-type system">⚙️ System Tool</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         EDUCATION & EXPERIENCE SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="education" aria-labelledby="education-heading">
+      <div class="edu-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">My Journey</span>
+          <h2 id="education-heading">Education & <span class="gradient-text">Experience</span></h2>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Item 1 -->
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-badge education">Education</div>
+              <div class="timeline-icon" aria-hidden="true">🎓</div>
+              <h3>Bachelor of Computer Science</h3>
+              <p class="timeline-org">AAST University – Arab Academy for Science, Technology & Maritime Transport</p>
+              <p class="timeline-desc">
+                Studying core Computer Science disciplines including algorithms, data structures,
+                software engineering, databases, and artificial intelligence.
+              </p>
+              <div class="timeline-tags">
+                <span>CS Fundamentals</span>
+                <span>Software Engineering</span>
+                <span>AI/ML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item right" data-aos="fade-left">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-badge training">Training</div>
+              <div class="timeline-icon" aria-hidden="true">🤖</div>
+              <h3>Machine Learning Training</h3>
+              <p class="timeline-org">FlyRank</p>
+              <p class="timeline-desc">
+                Hands-on machine learning training covering regression models, ensemble methods
+                (Random Forest, XGBoost), and real-world data pipelines.
+              </p>
+              <div class="timeline-tags">
+                <span>Regression</span>
+                <span>Random Forest</span>
+                <span>XGBoost</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-badge achievement">Achievement</div>
+              <div class="timeline-icon" aria-hidden="true">🏆</div>
+              <h3>Dell Summer Academy</h3>
+              <p class="timeline-org">Dell Technologies</p>
+              <p class="timeline-desc">
+                Selected as an interviewee for Dell's prestigious Summer Academy program,
+                demonstrating technical aptitude and potential.
+              </p>
+              <div class="timeline-tags">
+                <span>Technical Interview</span>
+                <span>Dell Technologies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item right" data-aos="fade-left">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-badge freelance">Freelance</div>
+              <div class="timeline-icon" aria-hidden="true">💼</div>
+              <h3>Freelance Developer</h3>
+              <p class="timeline-org">Upwork</p>
+              <p class="timeline-desc">
+                Delivering web and software development solutions to international clients.
+                Building real-world experience through client collaboration and project delivery.
+              </p>
+              <div class="timeline-tags">
+                <span>Client Projects</span>
+                <span>Web Dev</span>
+                <span>Remote Work</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="contact-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Let's Talk</span>
+          <h2 id="contact-heading">Get In <span class="gradient-text">Touch</span></h2>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info -->
+          <div class="contact-info" data-aos="fade-right">
+            <p class="contact-intro">
+              Have a project in mind, a question, or just want to say hello?
+              I'm always open to discussing new opportunities and interesting ideas.
+            </p>
+            <div class="contact-channels">
+              <a href="mailto:youssifkady91@gmail.com" class="contact-channel" id="email-channel">
+                <div class="channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Email</span>
+                  <span class="channel-value">youssifkady91@gmail.com</span>
+                </div>
+                <svg class="channel-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="tel:+201019608978" class="contact-channel" id="phone-channel">
+                <div class="channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.13 12 19.79 19.79 0 011.06 3.37 2 2 0 013.05 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Phone</span>
+                  <span class="channel-value">+20 101 960 8978</span>
+                </div>
+                <svg class="channel-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <div class="contact-channel static" id="location-channel">
+                <div class="channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Location</span>
+                  <span class="channel-value">Egypt 🇪🇬 – Open to Remote</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form class="contact-form glass-card" id="contact-form" data-aos="fade-left" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="John Doe" autocomplete="name" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="john@example.com" autocomplete="email" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="Project Inquiry / Collaboration" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>YK<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Youssif Kady. Crafted with ❤️ &amp; ☕
+      </p>
+      <div class="footer-links">
+        <a href="mailto:youssifkady91@gmail.com" aria-label="Email Youssif Kady">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="tel:+201019608978" aria-label="Call Youssif Kady">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.13 12 19.79 19.79 0 011.06 3.37 2 2 0 013.05 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
