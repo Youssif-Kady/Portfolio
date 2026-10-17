@@ -1,9 +1,3 @@
-/* ═══════════════════════════════════════════
-   YOUSSIF KADY – PORTFOLIO CSS
-   Theme: Dark Mode | Electric Blue + Neon Purple
-═══════════════════════════════════════════ */
-
-/* ── Design Tokens ───────────────────────── */
 :root {
   --bg-base:       #050810;
   --bg-surface:    #090d1a;
@@ -12,7 +6,7 @@
   --border:        rgba(255, 255, 255, 0.08);
   --border-glow:   rgba(99, 179, 237, 0.35);
 
-  /* Accent Palette */
+  
   --blue:          #4fa8ff;
   --blue-bright:   #63b3ed;
   --blue-dark:     #2b6cb0;
@@ -25,38 +19,37 @@
   --orange:        #fb923c;
   --red:           #f87171;
 
-  /* Gradient */
+  
   --grad-primary:  linear-gradient(135deg, #4fa8ff 0%, #a855f7 100%);
   --grad-glow:     linear-gradient(135deg, rgba(79,168,255,0.15) 0%, rgba(168,85,247,0.15) 100%);
 
-  /* Text */
+  
   --text-primary:  #f0f4ff;
   --text-secondary:#a8b3cf;
   --text-muted:    #5a6a8a;
 
-  /* Spacing & Shape */
+  
   --radius-sm:     8px;
   --radius-md:     14px;
   --radius-lg:     22px;
   --radius-xl:     32px;
   --radius-full:   9999px;
 
-  /* Shadows */
+  
   --shadow-card:   0 4px 32px rgba(0,0,0,0.45);
   --shadow-glow:   0 0 40px rgba(79,168,255,0.2);
   --shadow-purple: 0 0 40px rgba(168,85,247,0.2);
 
-  /* Transitions */
+  
   --ease:         cubic-bezier(0.4, 0, 0.2, 1);
   --t-fast:       0.15s;
   --t-mid:        0.3s;
   --t-slow:       0.5s;
 
-  /* Nav height */
+  
   --nav-h: 70px;
 }
 
-/* ── Reset & Base ────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -80,7 +73,6 @@ button { font-family: inherit; cursor: none; border: none; background: none; }
 ul { list-style: none; }
 input, textarea { font-family: inherit; }
 
-/* ── Particle Canvas ─────────────────────── */
 #particle-canvas {
   position: fixed;
   inset: 0;
@@ -88,7 +80,6 @@ input, textarea { font-family: inherit; }
   pointer-events: none;
 }
 
-/* ── Custom Cursor ───────────────────────── */
 #cursor-dot {
   width: 8px; height: 8px;
   background: var(--blue);
@@ -123,7 +114,6 @@ input, textarea { font-family: inherit; }
   button { cursor: pointer; }
 }
 
-/* ── Preloader ───────────────────────────── */
 #preloader {
   position: fixed;
   inset: 0;
@@ -167,7 +157,6 @@ input, textarea { font-family: inherit; }
   to   { width: 100%; }
 }
 
-/* ── Container & Layout ──────────────────── */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -182,7 +171,6 @@ section {
   overflow: hidden;
 }
 
-/* ── Navigation ──────────────────────────── */
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -308,7 +296,6 @@ section {
 .mobile-link:hover { color: var(--text-primary); background: var(--bg-card); }
 .mobile-hire { text-align: center; margin-top: 0.5rem; }
 
-/* ── Buttons ─────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -355,7 +342,6 @@ section {
 .btn-sm { padding: 0.5rem 1.1rem; font-size: 0.82rem; }
 .btn-full { width: 100%; justify-content: center; }
 
-/* ── Glass Card ──────────────────────────── */
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -372,7 +358,6 @@ section {
   transform: translateY(-4px);
 }
 
-/* ── Section Headers ─────────────────────── */
 .section-header {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -397,7 +382,6 @@ section {
   line-height: 1.15;
 }
 
-/* ── Gradient Text ───────────────────────── */
 .gradient-text {
   background: var(--grad-primary);
   -webkit-background-clip: text;
@@ -409,7 +393,6 @@ section {
   font-weight: 600;
 }
 
-/* ── AOS (custom) ────────────────────────── */
 [data-aos] {
   opacity: 0;
   transform: translateY(28px);
@@ -424,9 +407,6 @@ section {
 [data-aos="fade-right"].aos-animate,
 [data-aos="fade-left"].aos-animate  { transform: translateX(0); }
 
-/* ════════════════════════════════════════════
-   HERO SECTION
-════════════════════════════════════════════ */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -475,7 +455,6 @@ section {
   width: 100%;
 }
 
-/* Hero Text */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -571,7 +550,6 @@ section {
   background: var(--border);
 }
 
-/* Hero Avatar */
 .hero-avatar-wrap {
   position: relative;
   display: flex;
@@ -647,7 +625,6 @@ section {
   50%       { transform: translateY(-10px); }
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem; left: 50%;
@@ -677,9 +654,6 @@ section {
   50%       { opacity: 1; transform: scaleY(0.7); }
 }
 
-/* ════════════════════════════════════════════
-   ABOUT SECTION
-════════════════════════════════════════════ */
 #about { background: var(--bg-surface); }
 
 .about-grid {
@@ -761,9 +735,6 @@ section {
 }
 .tag:hover { border-color: var(--blue); color: var(--text-primary); }
 
-/* ════════════════════════════════════════════
-   SKILLS SECTION
-════════════════════════════════════════════ */
 #skills {
   background: var(--bg-base);
 }
@@ -803,7 +774,6 @@ section {
   color: var(--text-primary);
 }
 
-/* Badges */
 .badge-group {
   display: flex;
   flex-wrap: wrap;
@@ -828,7 +798,6 @@ section {
 .badge-orange { background: rgba(251,146,60,0.12); color: var(--orange);        border-color: rgba(251,146,60,0.25); }
 .badge-red    { background: rgba(248,113,113,0.12); color: var(--red);          border-color: rgba(248,113,113,0.25); }
 
-/* Skill Bars */
 .skill-bar-group { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .skill-bar-item { display: flex; flex-direction: column; gap: 0.3rem; }
 .skill-bar-item span { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
@@ -846,9 +815,6 @@ section {
   transition: width 1.2s var(--ease);
 }
 
-/* ════════════════════════════════════════════
-   PROJECTS SECTION
-════════════════════════════════════════════ */
 #projects { background: var(--bg-surface); }
 
 .projects-grid {
@@ -972,9 +938,46 @@ section {
 .project-type.desktop  { background: rgba(168,85,247,0.12); color: var(--purple-bright); }
 .project-type.system   { background: rgba(45,212,191,0.12); color: var(--teal); }
 
-/* ════════════════════════════════════════════
-   EDUCATION / TIMELINE SECTION
-════════════════════════════════════════════ */
+.skill-icon [data-lucide],
+.skill-icon svg.lucide {
+  width: 1.5em;
+  height: 1.5em;
+  stroke: var(--blue-bright);
+  stroke-width: 2;
+}
+.project-icon [data-lucide],
+.project-icon svg.lucide {
+  width: 1.6em;
+  height: 1.6em;
+  stroke: var(--text-primary);
+}
+.timeline-icon [data-lucide],
+.timeline-icon svg.lucide {
+  width: 1.4em;
+  height: 1.4em;
+  stroke: var(--blue-bright);
+}
+.project-type [data-lucide],
+.project-type svg.lucide {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  display: inline;
+  vertical-align: -2px;
+}
+.float-chip i[class*="devicon"] {
+  font-size: 1.1em;
+  vertical-align: -1px;
+}
+.float-chip [data-lucide],
+.float-chip svg.lucide {
+  width: 1.1em;
+  height: 1.1em;
+  stroke: var(--blue-bright);
+  display: inline;
+  vertical-align: -2px;
+}
+
 #education { background: var(--bg-base); }
 .edu-bg {
   position: absolute;
@@ -984,7 +987,7 @@ section {
 
 .timeline-container {
   position: relative;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1rem 0;
 }
@@ -995,40 +998,32 @@ section {
   width: 2px;
   background: linear-gradient(to bottom, transparent, var(--blue), var(--purple), transparent);
   transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 3rem;
+  position: relative;
 }
 
 .timeline-item {
-  display: grid;
-  grid-template-columns: 1fr 28px 1fr;
-  align-items: start;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  position: relative;
+  display: block;
 }
 .timeline-item.right {
-  direction: rtl;
-}
-.timeline-item.right .timeline-card {
-  direction: ltr;
+  display: block;
 }
 
 .timeline-dot {
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--grad-primary);
-  border: 3px solid var(--bg-base);
-  box-shadow: 0 0 16px rgba(79,168,255,0.5);
-  align-self: center;
-  justify-self: center;
-  z-index: 1;
-  position: relative;
+  display: none; 
 }
 
 .timeline-card {
   padding: 1.5rem;
-  grid-column: 1;
+  height: 100%;
 }
-.timeline-item.right .timeline-card { grid-column: 3; }
+.timeline-item.right .timeline-card { grid-column: unset; }
 
 .timeline-badge {
   display: inline-block;
@@ -1080,9 +1075,6 @@ section {
   color: var(--text-muted);
 }
 
-/* ════════════════════════════════════════════
-   CONTACT SECTION
-════════════════════════════════════════════ */
 #contact { background: var(--bg-surface); }
 .contact-bg-glow {
   position: absolute;
@@ -1159,7 +1151,6 @@ section {
   color: var(--blue-bright);
 }
 
-/* Contact Form */
 .contact-form {
   padding: 2rem;
 }
@@ -1219,9 +1210,6 @@ section {
 }
 .form-success.show { display: flex; }
 
-/* ════════════════════════════════════════════
-   FOOTER
-════════════════════════════════════════════ */
 #footer {
   background: var(--bg-base);
   border-top: 1px solid var(--border);
@@ -1261,7 +1249,6 @@ section {
 }
 .footer-links a:hover { color: var(--blue-bright); }
 
-/* Back to Top */
 #back-to-top {
   position: fixed;
   bottom: 2rem; right: 2rem;
@@ -1286,9 +1273,6 @@ section {
 }
 #back-to-top:hover { transform: translateY(-3px); }
 
-/* ════════════════════════════════════════════
-   RESPONSIVE
-════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .skill-card-wide { grid-column: span 2; }
@@ -1320,15 +1304,12 @@ section {
 
   .contact-grid { grid-template-columns: 1fr; }
 
-  .timeline-line { left: 20px; }
-  .timeline-item {
-    grid-template-columns: 20px 1fr;
-    direction: ltr;
-  }
-  .timeline-item.right { direction: ltr; }
-  .timeline-dot { align-self: start; margin-top: 1.25rem; }
-  .timeline-card { grid-column: 2; }
-  .timeline-item.right .timeline-card { grid-column: 2; }
+  .timeline-line { display: none; }
+  .timeline-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .timeline-item { display: contents; }
+  .timeline-dot { display: none; }
+  .timeline-card { grid-column: unset; }
+  .timeline-item.right .timeline-card { grid-column: unset; }
 }
 
 @media (max-width: 640px) {
