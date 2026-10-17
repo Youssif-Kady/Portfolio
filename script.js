@@ -1,16 +1,11 @@
-/* ═══════════════════════════════════════════
-   YOUSSIF KADY – PORTFOLIO JavaScript
-═══════════════════════════════════════════ */
-
 'use strict';
 
-/* ── Preloader ───────────────────────────── */
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   if (!preloader) return;
   setTimeout(() => {
     preloader.classList.add('hidden');
-    // Init everything after preloader
+
     initAll();
   }, 1900);
 });
@@ -30,7 +25,6 @@ function initAll() {
   initAvatarFallback();
 }
 
-/* ── Custom Cursor ───────────────────────── */
 function initCursor() {
   const dot  = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
@@ -46,7 +40,6 @@ function initCursor() {
     dot.style.top  = my + 'px';
   });
 
-  // Smooth ring follow
   function animateRing() {
     rx += (mx - rx) * 0.14;
     ry += (my - ry) * 0.14;
@@ -56,7 +49,6 @@ function initCursor() {
   }
   animateRing();
 
-  // Hover effect on interactive elements
   const interactables = document.querySelectorAll(
     'a, button, .project-card, .skill-card, .glass-card, input, textarea, .badge, .tech-pill'
   );
@@ -65,7 +57,6 @@ function initCursor() {
     el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
   });
 
-  // Hide cursor when leaving window
   document.addEventListener('mouseleave', () => {
     dot.style.opacity  = '0';
     ring.style.opacity = '0';
@@ -76,13 +67,11 @@ function initCursor() {
   });
 }
 
-/* ── Navbar ──────────────────────────────── */
 function initNavbar() {
   const navbar  = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   if (!navbar) return;
 
-  // Scroll shrink
   const onScroll = () => {
     if (window.scrollY > 30) {
       navbar.classList.add('scrolled');
@@ -94,7 +83,6 @@ function initNavbar() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Active section highlight
   function updateActiveLink() {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + window.innerHeight * 0.35;
@@ -108,7 +96,6 @@ function initNavbar() {
     });
   }
 
-  // Smooth scroll
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -118,7 +105,6 @@ function initNavbar() {
   });
 }
 
-/* ── Mobile Menu ─────────────────────────── */
 function initMobileMenu() {
   const toggle = document.getElementById('nav-toggle');
   const menu   = document.getElementById('mobile-menu');
@@ -131,7 +117,6 @@ function initMobileMenu() {
     menu.setAttribute('aria-hidden', !isOpen);
   });
 
-  // Close on link click
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('open');
@@ -142,7 +127,6 @@ function initMobileMenu() {
   });
 }
 
-/* ── Typewriter ──────────────────────────── */
 function initTypewriter() {
   const el = document.getElementById('typewriter-text');
   if (!el) return;
@@ -184,7 +168,6 @@ function initTypewriter() {
   setTimeout(tick, 600);
 }
 
-/* ── Particle Canvas ─────────────────────── */
 function initParticles() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
@@ -217,7 +200,6 @@ function initParticles() {
 
   particles = Array.from({ length: PARTICLE_COUNT }, mkParticle);
 
-  // Mouse interaction
   let mouse = { x: -9999, y: -9999 };
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
@@ -242,33 +224,29 @@ function initParticles() {
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
-    // Move
     particles.forEach(p => {
       p.x += p.vx;
       p.y += p.vy;
       if (p.x < 0 || p.x > W) p.vx *= -1;
       if (p.y < 0 || p.y > H) p.vy *= -1;
 
-      // Mouse repulsion
       const mx = p.x - mouse.x, my = p.y - mouse.y;
       const md = mx * mx + my * my;
       if (md < 8000) {
         const f = (8000 - md) / 8000 * 0.8;
         p.vx += (mx / Math.sqrt(md)) * f * 0.15;
         p.vy += (my / Math.sqrt(md)) * f * 0.15;
-        // Clamp speed
+
         const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
         if (spd > 2) { p.vx = (p.vx / spd) * 2; p.vy = (p.vy / spd) * 2; }
       }
 
-      // Draw dot
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `${p.col}${p.a})`;
       ctx.fill();
     });
 
-    // Connect nearby
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         connect(particles[i], particles[j]);
@@ -280,7 +258,6 @@ function initParticles() {
   draw();
 }
 
-/* ── Animated Counters ───────────────────── */
 function initCounters() {
   const nums = document.querySelectorAll('.stat-number[data-count]');
   let done = false;
@@ -308,7 +285,6 @@ function initCounters() {
   animateCounters();
 }
 
-/* ── AOS (custom Intersection Observer) ─── */
 function initAOS() {
   const els = document.querySelectorAll('[data-aos]');
   if (!els.length) return;
@@ -328,7 +304,6 @@ function initAOS() {
   els.forEach(el => obs.observe(el));
 }
 
-/* ── Skill Bars ──────────────────────────── */
 function initSkillBars() {
   const bars = document.querySelectorAll('.skill-bar[data-width]');
   if (!bars.length) return;
@@ -349,7 +324,6 @@ function initSkillBars() {
   bars.forEach(bar => obs.observe(bar));
 }
 
-/* ── Contact Form ────────────────────────── */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const btn  = document.getElementById('submit-btn');
@@ -373,7 +347,6 @@ function initContactForm() {
       return;
     }
 
-    // Simulate sending
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Sending...';
 
@@ -404,7 +377,6 @@ function shakeForm(el) {
   el.addEventListener('animationend', () => { el.style.animation = ''; }, { once: true });
 }
 
-// Shake keyframe
 const style = document.createElement('style');
 style.textContent = `
 @keyframes shake {
@@ -417,7 +389,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-/* ── Back to Top ─────────────────────────── */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
@@ -431,18 +402,16 @@ function initBackToTop() {
   });
 }
 
-/* ── Footer Year ─────────────────────────── */
 function initFooterYear() {
   const el = document.getElementById('footer-year');
   if (el) el.textContent = new Date().getFullYear();
 }
 
-/* ── Avatar Fallback ─────────────────────── */
 function initAvatarFallback() {
   const avatars = document.querySelectorAll('img[src="avatar.png"]');
   avatars.forEach(img => {
     img.onerror = () => {
-      // Replace broken image with a generated SVG avatar
+
       const parent = img.parentElement;
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.setAttribute('viewBox', '0 0 200 200');
@@ -467,7 +436,6 @@ function initAvatarFallback() {
   });
 }
 
-/* ── Smooth in-page anchor scrolling for ALL anchors ── */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     const target = document.querySelector(link.getAttribute('href'));
